@@ -14,7 +14,11 @@
     "test:unit": "vitest --environment jsdom",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "docs:dev": "npm run generate:raws && vitepress dev docs",
+    "docs:build": "npm run generate:raws && vitepress build docs",
+    "docs:serve": "npm run generate:raws && vitepress serve docs",
+    "generate:raws": "node docs/.vitepress/components/raws-generate.js"
   },
   "dependencies": {
     "vue": "^3.2.37"
@@ -36,8 +40,10 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "sass": "^1.54.0",
+    "shiki": "^0.10.1",
     "typescript": "~4.7.4",
     "vite": "^3.0.1",
+    "vitepress": "^1.0.0-alpha.4",
     "vitest": "^0.18.1",
     "vue": "^3.2.37",
     "vue-tsc": "^0.38.8"
