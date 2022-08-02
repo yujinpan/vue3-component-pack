@@ -18,16 +18,18 @@ npm i --save your-component
 </template>
 
 <script>
-// import HelloWorld from 'your-component';
+import HelloWorld from 'your-component';
 
 export default {
   components: {
-    // HelloWorld
+    HelloWorld
   },
 };
 </script>
 ```
 
-## Demo
+## Features
 
-<Demo component="HelloWorld" />
+### Feature1
+
+<Demo component="Feature1" />
