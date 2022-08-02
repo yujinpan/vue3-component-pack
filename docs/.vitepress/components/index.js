@@ -1,7 +1,8 @@
-import Demo from '../components/Demo.vue';
-import HelloWorld from '../components/HelloWorld.vue';
+import Demo from './Demo.vue';
+
+import Feature1 from './Feature1.vue';
 
 export const install = (app) => {
   app.component('Demo', Demo);
-  app.component('HelloWorld', HelloWorld);
+  app.component('Feature1', Feature1);
 };
