@@ -1,8 +1,8 @@
 const path = require('path');
-const shiki = require('shiki');
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
+const { createMarkdownRenderer } = require('vitepress');
 
 async function generateJSON() {
   const markdowns = await getComponentsMarkdowns();
@@ -16,8 +16,7 @@ async function getComponentsMarkdowns() {
   await Promise.all(
     modules.map(async (id) => {
       raws[getFileName(id)] = await codeToHighlight(
-        fs.readFileSync(id).toString(),
-        'vue'
+        fs.readFileSync(id).toString()
       );
     })
   );
@@ -27,22 +26,9 @@ async function getComponentsMarkdowns() {
 /**
  * fork from node_modules/vitepress/dist/node-cjs/serve-f2029a83.cjs
  */
-async function codeToHighlight(
-  str,
-  lang = 'text',
-  theme = 'material-palenight'
-) {
-  const highlighter = await shiki.getHighlighter({
-    themes: [theme],
-    langs: ['vue'],
-  });
-  const preRE = /^<pre.*?>/;
-
-  const html = highlighter
-    .codeToHtml(str, { lang, theme })
-    .replace(preRE, '<pre>');
-
-  return `<div class="language-${lang}"><span class="copy"></span>${html}</div>`;
+async function codeToHighlight(str) {
+  const markerIt = await createMarkdownRenderer(path.resolve(__dirname, '../'));
+  return markerIt.render('```vue\n' + str + '```');
 }
 
 function getFileName(id) {
