@@ -31,5 +31,9 @@ export default {
   border-radius: $spacing-base;
   padding: $spacing-medium $spacing-medium 0;
   margin: $spacing-medium 0;
+
+  ::v-deep(div[class*='language-']) {
+    font-size: 16px;
+  }
 }
 </style>
