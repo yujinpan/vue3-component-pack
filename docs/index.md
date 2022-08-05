@@ -33,3 +33,7 @@ export default {
 ### Feature1
 
 <Demo component="Feature1" />
+
+### Feature2
+
+<Demo component="Feature2" />
