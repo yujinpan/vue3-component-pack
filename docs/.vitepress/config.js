@@ -1,5 +1,3 @@
-const path = require('path');
-
 const nav = [
   { text: 'Guide', link: '/guide/' },
   { text: 'API', link: '/api/' },
@@ -51,15 +49,25 @@ module.exports = {
   base: '/your-component/dist/',
   title: 'your-component',
   description: 'your-component description',
-  dest: path.resolve(__dirname, '../../dist'),
 
   themeConfig: {
     logo: '/logo.svg',
 
-    repo: 'your-component',
-    lastUpdatedText: 'Updated Date',
-
     sidebar,
     nav,
+
+    socialLinks: [
+      {
+        icon: 'github',
+        link: 'https://github.com/your-name/your-component',
+      },
+    ],
+
+    lastUpdatedText: 'Updated Date',
+
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2022-2022 your-name',
+    },
   },
 };
