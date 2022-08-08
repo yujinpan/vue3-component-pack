@@ -14,10 +14,9 @@ import { ElTable, ElTableColumn } from 'element-plus';
 import { ref } from 'vue';
 
 // auto base/dark style
-import 'element-plus/theme-chalk/base.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import 'element-plus/theme-chalk/el-table.css';
-import 'element-plus/theme-chalk/el-table-column.css';
+import 'element-plus/es/components/table/style/css';
+import 'element-plus/es/components/table-column/style/css';
 
 const data = ref([
   { name: 'name1', type: 'type1' },
