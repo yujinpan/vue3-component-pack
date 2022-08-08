@@ -47,6 +47,7 @@ const sidebar = {
 };
 
 module.exports = {
+  appearance: true,
   base: '/your-component/dist/',
   title: 'your-component',
   description: 'your-component description',
