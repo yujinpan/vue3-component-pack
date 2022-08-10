@@ -1,3 +1,4 @@
+import path from 'path';
 import { defineConfig } from 'vitepress';
 import type { DefaultTheme } from 'vitepress';
 
@@ -71,6 +72,14 @@ const config = defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2022-2022 your-name',
+    },
+  },
+
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../../src'),
+      },
     },
   },
 });
