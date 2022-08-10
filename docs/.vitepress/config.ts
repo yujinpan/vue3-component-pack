@@ -1,10 +1,13 @@
-const nav = [
+import { defineConfig } from 'vitepress';
+import type { DefaultTheme } from 'vitepress';
+
+const nav: DefaultTheme.Config['nav'] = [
   { text: 'Guide', link: '/guide/' },
   { text: 'API', link: '/api/' },
   { text: 'Components', link: '/components/' },
 ];
 
-const sidebar = {
+const sidebar: DefaultTheme.Config['sidebar'] = {
   '/guide/': [
     {
       text: 'Guide',
@@ -44,7 +47,7 @@ const sidebar = {
   ],
 };
 
-module.exports = {
+const config = defineConfig({
   appearance: true,
   base: '/your-component/',
   title: 'your-component',
@@ -70,4 +73,6 @@ module.exports = {
       copyright: 'Copyright © 2022-2022 your-name',
     },
   },
-};
+});
+
+export default config;
