@@ -50,7 +50,10 @@ const sidebar: DefaultTheme.Config['sidebar'] = {
 
 const config = defineConfig({
   appearance: true,
-  base: '/your-component/',
+
+  // @TODO replace base to your-component
+  base: '/vue3-component-pack/',
+
   title: 'your-component',
   description: 'your-component description',
 
