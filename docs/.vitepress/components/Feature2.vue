@@ -15,8 +15,9 @@ import { ref } from 'vue';
 
 // auto base/dark style
 import 'element-plus/theme-chalk/dark/css-vars.css';
-import 'element-plus/es/components/table/style/css';
-import 'element-plus/es/components/table-column/style/css';
+
+// es module can not be load, import full styles
+import 'element-plus/theme-chalk/index.css';
 
 const data = ref([
   { name: 'name1', type: 'type1' },
