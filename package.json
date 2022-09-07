@@ -9,6 +9,8 @@
     "lib"
   ],
   "scripts": {
+    "version": "npm run build && git add -A lib",
+    "postversion": "git push origin master && npm publish",
     "dev": "vite",
     "build": "rollupx && eslint --fix lib/**/*.d.ts --no-ignore",
     "preview": "vite preview --port 4173",
