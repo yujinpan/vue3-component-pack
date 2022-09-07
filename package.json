@@ -2,6 +2,7 @@
   "name": "your-component",
   "version": "0.0.0",
   "author": "your-name",
+  "main": "lib/index.js",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
