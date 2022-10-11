@@ -9,8 +9,10 @@
     "lib"
   ],
   "scripts": {
+    "publish:beta": "npm version prerelease --preid=beta && npm publish",
+    "publish:patch": "npm version patch && npm publish",
     "version": "npm run build",
-    "postversion": "git push origin master && npm publish",
+    "postversion": "git push --all && git push --tags",
     "start": "npm run dev",
     "dev": "vite",
     "build": "rollupx && eslint --fix lib/**/*.d.ts --no-ignore",
