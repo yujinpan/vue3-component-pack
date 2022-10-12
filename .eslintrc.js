@@ -29,6 +29,8 @@ module.exports = {
 
     // vue
     'vue/multi-word-component-names': 'off',
+    'vue/no-mutating-props': 'off',
+    'vue/no-reserved-component-names': 'off',
 
     // typescript https://typescript-eslint.io/rules/
     '@typescript-eslint/consistent-type-imports': 'error',
@@ -53,6 +55,12 @@ module.exports = {
           ['builtin', 'external'],
           ['type'],
           ['internal', 'parent', 'sibling', 'index'],
+        ],
+        pathGroups: [
+          {
+            pattern: '@/**',
+            group: 'internal',
+          },
         ],
         'newlines-between': 'always',
         alphabetize: { order: 'asc' },
